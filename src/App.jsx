@@ -7,6 +7,8 @@ import Header from "./components/layout/header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/main/main";
 import Info from "./components/layout/info";
+import Login from "./components/login/Login";
+import Register from "./components/join/Register";
 
 const routes = [
   {
@@ -37,9 +39,12 @@ function App() {
           {routes.map((route) => (
             <Route path={route.path} element={route.component}></Route>
           ))}
+          
         </Routes>
       </BrowserRouter>
       <Info />
+      <Login />
+      <Register/>
     </div>
   );
 }
