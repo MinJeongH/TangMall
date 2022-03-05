@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../auth/AuthProvider";
 import "./header.scss";
 
 const Header = () => {
   const [view, setView] = useState();
+  const auth = useAuth();
+  const navigate = useNavigate();
 
   return (
     <section className="header">
@@ -17,16 +21,32 @@ const Header = () => {
             <p className="text">이벤트가 표시되는 파트입니다.</p>
           </div>
         </div>
-        <div className="user">
-          <div className="login">
-            <img src="login_icon.svg" alt="login icon" />
-            <p>로그인</p>
+        {auth.user ? (
+          <div className="user">
+            <div className="login">
+              <img src="login_icon.svg" alt="login icon" />
+              <p>{auth.user}</p>
+              <button
+                onClick={() => {
+                  auth.signout(() => navigate("/"));
+                }}
+              >
+                로그아웃
+              </button>
+            </div>
           </div>
-          <div className="join">
-            <img src="join_icon.svg" alt="join icon" />
-            <p>회원가입</p>
+        ) : (
+          <div className="user">
+            <div className="login">
+              <img src="login_icon.svg" alt="login icon" />
+              <Link to="/login">로그인</Link>
+            </div>
+            <div className="join">
+              <img src="join_icon.svg" alt="join icon" />
+              <p>회원가입</p>
+            </div>
           </div>
-        </div>
+        )}
       </section>
       <section className="bottomcontainer">
         <div className="logo">
@@ -81,7 +101,7 @@ const Header = () => {
             onMouseOut={() => setView("")}
           >
             <h1 className={`menu_item ${view === 3 ? "view" : ""}`}>
-              마이페이지
+              <Link to="/detail">마이페이지</Link>
             </h1>
             <div className={`user ${view === 3 ? "view" : ""}`}>
               <p>포인트내역</p>

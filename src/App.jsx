@@ -9,8 +9,11 @@ import Main from "./components/main/main";
 import Info from "./components/layout/info";
 import Login from "./components/login/Login";
 import Register from "./components/join/Register";
+import CommonLayout from "./layout/CommonLayout";
+import LoginLayout from "./layout/LoginLayout";
+import { AuthProvider, RequireAuth } from "./components/auth/AuthProvider";
 
-const routes = [
+const publicRoutes = [
   {
     path: "/",
     component: (
@@ -19,6 +22,28 @@ const routes = [
       </Card>
     ),
   },
+];
+
+const loginRoutes = [
+  {
+    path: "/login",
+    component: (
+      <Card>
+        <Login />
+      </Card>
+    ),
+  },
+  {
+    path: "/join",
+    component: (
+      <Card>
+        <Register />
+      </Card>
+    ),
+  },
+];
+
+const sessionRoutes = [
   {
     path: "/detail",
     component: (
@@ -28,23 +53,33 @@ const routes = [
     ),
   },
 ];
-
 function App() {
   return (
     <div className="app">
-      <Header />
-      <Commercial />
       <BrowserRouter>
-        <Routes>
-          {routes.map((route) => (
-            <Route path={route.path} element={route.component}></Route>
-          ))}
-          
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            {/* Common Layout Routes */}
+            <Route element={<CommonLayout />}>
+              {publicRoutes.map((route) => (
+                <Route path={route.path} element={route.component}></Route>
+              ))}
+              <Route element={<RequireAuth />}>
+                {sessionRoutes.map((route) => (
+                  <Route path={route.path} element={route.component}></Route>
+                ))}
+              </Route>
+            </Route>
+
+            {/* Login Layout Routes */}
+            <Route element={<LoginLayout />}>
+              {loginRoutes.map((route) => (
+                <Route path={route.path} element={route.component}></Route>
+              ))}
+            </Route>
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
-      <Info />
-      <Login />
-      <Register/>
     </div>
   );
 }
