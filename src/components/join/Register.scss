@@ -1,0 +1,83 @@
+.register-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
+  
+  .register-head {
+    text-align: center;
+    padding: 2rem 10rem;
+  }
+  
+  .register-high-hr {
+    height: 2px;
+    background-color: #000;
+  }
+  
+  .input-btn {
+    font-size: 1.5rem;
+    width: 70%;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 1;
+  }
+  
+  .input-nobtn {
+    font-size: 1.5rem;
+    width: 90%;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 1;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 20%;
+  }
+  
+  .title-content {
+    width: 60%;
+  }
+  
+  .btn-check {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding : 0.3em;
+    width: 20%;
+    border-radius: 0.8rem;
+    background-color: #CEF2F2;
+  }
+  
+  .id-box, .nick-box, .pw-box, .conpw-bow, .email-box, .phone-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem 10rem;
+  }
+  
+  .btn-next-box {
+    padding-top: 2rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .btn-next {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5em 2.5em;
+  
+    &.per-register {
+      background-color: #CEF2F2;
+    }
+  
+    &.cancel {
+      background-color: #F0F0F2;
+    }
+  }

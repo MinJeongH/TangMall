@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthProvider";
+import "./Login.scss";
 
 function Login() {
   const [InputId, setInputId] = useState("");
@@ -14,12 +15,34 @@ function Login() {
   const from = state ? state.from.pathname : "/";
 
   const onClickLogin = (e) => {
-    console.log("홈으로 가자...");
     e.preventDefault();
-    auth.signin(InputId, () => {
-      navigate(from, { replace: true });
-    });
+
+    let request = {
+      userId: InputId,
+      userPw: InputPw,
+    };
+
+    auth
+      .signin(request)
+      .then((res) => {
+        if (res) {
+          navigate(from, { replace: true });
+        } else {
+          alert("로그인에 실패 했습니다.");
+        }
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
+
+  const onClickRegister = () => {
+    navigate("/registerAgree", { replace: true });
+  }
+
+  const onClickFind = () => {
+    navigate("/", { replace: true });
+  }
 
   const handleInputId = (e) => {
     setInputId(e.target.value);
@@ -30,32 +53,49 @@ function Login() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <div>
-        <label htmlFor="input_id">ID : </label>
-        <input
+    <div className="login-container">
+      <div className="login-container-title">방문을 &nbsp; 환영합니다</div>
+      <div className="login-id-box">
+        <input className="login-input"
           type="text"
           name="input_id"
+          placeholder="아이디"
           value={InputId}
           onChange={handleInputId}
         />
-        <div>{InputId}</div>
+        <div></div>
       </div>
-      <div>
-        <label htmlFor="input_pw">PW : </label>
-        <input
+      <div className="login-pw-box">
+        <input className="login-input"
           type="password"
           name="input_pw"
+          placeholder="비밀번호"
           value={InputPw}
           onChange={handleInputPw}
         />
-        <div>{InputPw}</div>
+        <div></div>
       </div>
-      <div>
-        <button type="button" onClick={onClickLogin}>
-          Login
+      <div className="login-btn-box">
+        <button className="login-btn" type="button" onClick={onClickLogin}>
+          로 그 인
         </button>
+      </div>
+      <div className="hr">
+        <hr />
+      </div>
+      <div className="join-find">
+        <div>
+          <button type="button" 
+          className="join-find-button"
+          onClick={onClickRegister}>회원가입</button>
+        </div>
+        <div className="join-or-find">또는</div>
+        <div>
+          <button type="button"
+          className="join-find-button"
+          onClick={onClickFind}
+          >아이디/비밀번호 찾기</button>
+        </div>
       </div>
     </div>
   );

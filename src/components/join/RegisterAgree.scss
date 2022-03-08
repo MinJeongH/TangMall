@@ -1,0 +1,77 @@
+/* Agree Container */
+
+.agree-container {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 3rem 6rem;
+  }
+  
+  /* Head */
+  
+  .agree-head-box {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* All check box Area */
+  
+  .agree-all-box {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .block {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Content */
+  
+  // .agree-content-box {}
+  
+  .agree-content-checkbox {
+    background-color: #F0F0F2;
+    width: 100%;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid #000;
+  }
+  
+  .agree-content-terms {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #000;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1rem;
+    overFlow: scroll;
+  }
+  
+  /* Button CSS */
+  
+  .agree-btn-box {
+    padding-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .next-btn {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 0.5em 2.5em;
+  
+    &.agree {
+      background-color: #CEF2F2;
+      border-radius: 1rem;
+    }
+  
+    &.disagree {
+      background-color: #F0F0F2;
+      border-radius: 1rem;
+    }
+  }

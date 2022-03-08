@@ -1,17 +1,17 @@
 import React from "react";
-import "./App.scss";
-import Card from "./components/layout/card";
-import ItemDetail from "./components/detail/item_detail";
-import Commercial from "./components/layout/commercial";
-import Header from "./components/layout/header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./components/main/main";
-import Info from "./components/layout/info";
-import Login from "./components/login/Login";
+import "./App.scss";
+import { AuthProvider } from "./components/auth/AuthProvider";
+import ItemDetail from "./components/detail/item_detail";
 import Register from "./components/join/Register";
+import RegisterAgree from "./components/join/RegisterAgree";
+import Card from "./components/layout/card";
+import Login from "./components/login/Login";
+import Main from "./components/main/main";
+import AuthLayout from "./layout/AuthLayout";
 import CommonLayout from "./layout/CommonLayout";
 import LoginLayout from "./layout/LoginLayout";
-import { AuthProvider, RequireAuth } from "./components/auth/AuthProvider";
+import PublicLayout from "./layout/PublicLayout";
 
 const publicRoutes = [
   {
@@ -34,10 +34,18 @@ const loginRoutes = [
     ),
   },
   {
-    path: "/join",
+    path: "/register",
     component: (
       <Card>
         <Register />
+      </Card>
+    ),
+  },
+  {
+    path: "/registeragree",
+    component: (
+      <Card>
+        <RegisterAgree />
       </Card>
     ),
   },
@@ -47,12 +55,13 @@ const sessionRoutes = [
   {
     path: "/detail",
     component: (
-      <Card>
-        <ItemDetail />
-      </Card>
+        <Card>
+          <ItemDetail />
+        </Card>
     ),
   },
 ];
+
 function App() {
   return (
     <div className="app">
@@ -60,21 +69,37 @@ function App() {
         <AuthProvider>
           <Routes>
             {/* Common Layout Routes */}
-            <Route element={<CommonLayout />}>
-              {publicRoutes.map((route) => (
-                <Route path={route.path} element={route.component}></Route>
-              ))}
-              <Route element={<RequireAuth />}>
-                {sessionRoutes.map((route) => (
-                  <Route path={route.path} element={route.component}></Route>
+            <Route element={<CommonLayout />}
+            >
+              <Route element={<PublicLayout/>}>
+                {publicRoutes.map((route, key) => (
+                  <Route
+                    key={key}
+                    path={route.path}
+                    element={route.component}
+                  ></Route>
+                ))}
+              </Route>
+             
+              <Route element={<AuthLayout/>}>
+                {sessionRoutes.map((route, key) => (
+                  <Route
+                    key={key}
+                    path={route.path}
+                    element={route.component}
+                  ></Route>
                 ))}
               </Route>
             </Route>
 
             {/* Login Layout Routes */}
             <Route element={<LoginLayout />}>
-              {loginRoutes.map((route) => (
-                <Route path={route.path} element={route.component}></Route>
+              {loginRoutes.map((route, key) => (
+                <Route
+                  key={key}
+                  path={route.path}
+                  element={route.component}
+                ></Route>
               ))}
             </Route>
           </Routes>

@@ -1,0 +1,1 @@
+export const USER_SERVER="https://9f57d7a9-5b88-48f0-aad4-b1fa33a6adf9.mock.pstmn.io/api";
