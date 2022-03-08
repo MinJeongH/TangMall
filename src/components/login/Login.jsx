@@ -40,8 +40,8 @@ function Login() {
     navigate("/registerAgree", { replace: true });
   }
 
-  const onClickFind = () => {
-    navigate("/", { replace: true });
+  const onClickRegisterCancel = () => {
+    navigate(-1);
   }
 
   const handleInputId = (e) => {
@@ -93,8 +93,8 @@ function Login() {
         <div>
           <button type="button"
           className="join-find-button"
-          onClick={onClickFind}
-          >아이디/비밀번호 찾기</button>
+          onClick={onClickRegisterCancel}
+          >취소</button>
         </div>
       </div>
     </div>
