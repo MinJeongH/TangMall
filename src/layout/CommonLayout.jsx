@@ -9,9 +9,7 @@ function CommonLayout() {
     <div className="app">
       <Header />
       <Commercial />
-
       <Outlet />
-
       <Info />
     </div>
   );

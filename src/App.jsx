@@ -13,7 +13,7 @@ import CommonLayout from "./layout/CommonLayout";
 import LoginLayout from "./layout/LoginLayout";
 import PublicLayout from "./layout/PublicLayout";
 
-const publicRoutes = [
+const routes = [
   {
     path: "/",
     component: (
@@ -22,9 +22,6 @@ const publicRoutes = [
       </Card>
     ),
   },
-];
-
-const loginRoutes = [
   {
     path: "/login",
     component: (
@@ -49,15 +46,12 @@ const loginRoutes = [
       </Card>
     ),
   },
-];
-
-const sessionRoutes = [
   {
     path: "/detail",
     component: (
-        <Card>
-          <ItemDetail />
-        </Card>
+      <Card>
+        <ItemDetail />
+      </Card>
     ),
   },
 ];
@@ -69,10 +63,9 @@ function App() {
         <AuthProvider>
           <Routes>
             {/* Common Layout Routes */}
-            <Route element={<CommonLayout />}
-            >
-              <Route element={<PublicLayout/>}>
-                {publicRoutes.map((route, key) => (
+            <Route element={<CommonLayout />}>
+              <Route element={<PublicLayout />}>
+                {routes.map((route, key) => (
                   <Route
                     key={key}
                     path={route.path}
@@ -80,9 +73,8 @@ function App() {
                   ></Route>
                 ))}
               </Route>
-             
-              <Route element={<AuthLayout/>}>
-                {sessionRoutes.map((route, key) => (
+              <Route element={<AuthLayout />}>
+                {routes.map((route, key) => (
                   <Route
                     key={key}
                     path={route.path}
@@ -91,10 +83,9 @@ function App() {
                 ))}
               </Route>
             </Route>
-
             {/* Login Layout Routes */}
             <Route element={<LoginLayout />}>
-              {loginRoutes.map((route, key) => (
+              {routes.map((route, key) => (
                 <Route
                   key={key}
                   path={route.path}
