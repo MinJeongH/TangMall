@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
-import ItemDetail from "./components/detail/item_detail";
 import Header from "./components/layout/header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./components/auth/AuthProvider";
@@ -16,7 +15,12 @@ import Ads from "./components/layout/ads";
 const routes = [
   {
     path: "/",
-    component: <Main />,
+    component: (
+      <>
+        <Ads />
+        <Main />
+      </>
+    ),
   },
   {
     path: "/login",
@@ -45,9 +49,12 @@ const routes = [
   {
     path: "/detail",
     component: (
-      <Card>
-        <ItemDetail />
-      </Card>
+      <>
+        <Ads />
+        <Card>
+          <ItemDetail />
+        </Card>
+      </>
     ),
   },
 ];
@@ -55,27 +62,10 @@ const routes = [
 function App() {
   return (
     <div className="app">
-      <Header />
-      <Ads />
       <BrowserRouter>
         <AuthProvider>
+          <Header />
           <Routes>
-            {/* Common Layout Routes */}
-            {routes.map((route, key) => (
-              <Route
-                key={key}
-                path={route.path}
-                element={route.component}
-              ></Route>
-            ))}
-            {routes.map((route, key) => (
-              <Route
-                key={key}
-                path={route.path}
-                element={route.component}
-              ></Route>
-            ))}
-            {/* Login Layout Routes */}
             {routes.map((route, key) => (
               <Route
                 key={key}

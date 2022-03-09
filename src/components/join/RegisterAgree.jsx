@@ -35,7 +35,7 @@ function RegisterAgree() {
 
   const onClickAgree = () => {
     if (TermsAll) {
-      navigate("/Register", { replace: true });
+      navigate("/register", { replace: true });
     } else {
       alert("약관에 모두 동의해 주세요");
     }
@@ -73,9 +73,7 @@ function RegisterAgree() {
       <div className="block"></div>
 
       <div className="agree-content-box">
-        <div
-          className="agree-content-checkbox"
-        >
+        <div className="agree-content-checkbox">
           <Checkbox
             className="checkBox"
             checked={TermsPer}
@@ -90,11 +88,7 @@ function RegisterAgree() {
 
       <div className="block"></div>
       <div className="agree-btn-box">
-        <button
-          className="next-btn agree"
-          type="button"
-          onClick={onClickAgree}
-        >
+        <button className="next-btn agree" type="button" onClick={onClickAgree}>
           다 음
         </button>
         <button className="next-btn disagree" onClick={onClickDisagree}>
