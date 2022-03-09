@@ -1,8 +1,8 @@
 import React from "react";
-import "./commercial.scss";
+import "./ads.scss";
 
-const Commercial = () => {
+const Ads = () => {
   return <div className="commercial">광고</div>;
 };
 
-export default Commercial;
+export default Ads;

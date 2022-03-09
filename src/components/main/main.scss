@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic:wght@400;700;800&display=swap");
+@import "../../common.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Do Hyeon", sans-serif;
+  width: 100%;
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    .title {
+      margin: 20px 0;
+      display: flex;
+      font-size: 36px;
+    }
+    .list {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+  }
+}
