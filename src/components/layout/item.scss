@@ -4,10 +4,10 @@
 .item {
   display: flex;
   flex-direction: column;
-
   font-family: "Nanum Gothic", sans-serif;
   color: $fontColorBlack;
   width: 30%;
+  text-decoration: none;
   .img_box {
     background-color: #c4c4c4;
     display: flex;

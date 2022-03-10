@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./item.scss";
 
 const Item = (props) => {
   return (
-    <section className="item">
+    <Link to={"/detail"} className="item">
       <div className="img_box">
         <img src="sample.png" alt="img" />
       </div>
@@ -31,7 +32,7 @@ const Item = (props) => {
           </div>
         </div>
       </div>
-    </section>
+    </Link>
   );
 };
 export default Item;

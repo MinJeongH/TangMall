@@ -33,30 +33,37 @@ const Header = () => {
         {auth.user ? (
           <div className="user">
             <div className="login">
-            <p>{auth.user}</p>
+              <p>{auth.user}</p>
               <button onClick={logoutHandler}>
                 <img src="logout_icon.svg" alt="login icon" />
-                로그아웃</button>
+                <p>로그아웃</p>
+              </button>
             </div>
           </div>
         ) : (
           <div className="user">
             <div className="login">
               <img src="login_icon.svg" alt="login icon" />
-              <Link to="/login">로그인</Link>
+              <Link to="/login" className="link">
+                로그인
+              </Link>
             </div>
             <div className="join">
               <img src="join_icon.svg" alt="join icon" />
-              <Link to="/registerAgree">회원가입</Link>
+              <Link to="/registerAgree" className="link">
+                회원가입
+              </Link>
             </div>
           </div>
         )}
       </section>
       <section className="bottomcontainer">
-        <div className="logo logo-link">
-          <Link to='/'><img src="icon_tang 1.svg" alt="logo" /></Link>
-          <h1>탕탕탕</h1>
-        </div>
+        <Link to={"/"} className="logo_link">
+          <div className="logo">
+            <img src="icon_tang 1.svg" alt="logo" />
+            <h1>탕탕탕</h1>
+          </div>
+        </Link>
         <div className="menu">
           <div
             className="menu_list"
