@@ -6,7 +6,7 @@ const Item = (props) => {
   return (
     <Link to={"/detail"} className="item">
       <div className="img_box">
-        <img src="sample.png" alt="img" />
+        <img src="/sample.png" alt="img" />
       </div>
       <h1 className="item_title">가방 판매합니다</h1>
       <div className="text">

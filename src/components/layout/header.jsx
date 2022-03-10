@@ -34,7 +34,7 @@ const Header = () => {
           <div className="user">
             <p>{auth.user}</p>
             <div className="logout" onClick={logoutHandler}>
-              <img src="logout_icon.svg" alt="login icon" />
+              <img src="/logout_icon.svg" alt="login icon" />
               <p>로그아웃</p>
             </div>
           </div>
@@ -42,13 +42,13 @@ const Header = () => {
           <div className="user">
             <div className="login">
               <Link to="/login" className="link">
-                <img src="login_icon.svg" alt="login icon" />
+                <img src="/login_icon.svg" alt="login icon" />
                 로그인
               </Link>
             </div>
             <div className="join">
               <Link to="/registerAgree" className="link">
-                <img src="join_icon.svg" alt="join icon" />
+                <img src="/join_icon.svg" alt="join icon" />
                 회원가입
               </Link>
             </div>
@@ -58,7 +58,7 @@ const Header = () => {
       <section className="bottomcontainer">
         <Link to={"/"} className="logo_link">
           <div className="logo">
-            <img src="icon_tang 1.svg" alt="logo" />
+            <img src="/icon_tang 1.svg" alt="logo" />
             <h1>탕탕탕</h1>
           </div>
         </Link>

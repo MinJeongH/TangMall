@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.scss";
 import Header from "./components/layout/header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -11,6 +11,9 @@ import Login from "./components/login/Login";
 import Main from "./components/main/main";
 import Info from "./components/layout/info";
 import Ads from "./components/layout/ads";
+import AuctionInfo from "./components/auction_info/auction_info";
+import AuthLayout from "./components/layout/AuthLayout";
+import Sample from "./components/sample";
 
 const routes = [
   {
@@ -55,6 +58,25 @@ const routes = [
           <ItemDetail />
         </Card>
       </>
+    ),
+  },
+  {
+    path: "/auction/:menu",
+    component: (
+      <>
+        <Ads />
+        <AuctionInfo />
+      </>
+    ),
+  },
+  {
+    path: "/mypage",
+    component: (
+      <Card>
+        <AuthLayout>
+          <Sample />
+        </AuthLayout>
+      </Card>
     ),
   },
 ];
