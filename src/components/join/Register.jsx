@@ -96,97 +96,93 @@ function Register() {
 
   return (
     <div className="register-container">
-      <div className="register-head">
-        <h1>회원가입</h1>
-        <hr className="register-high-hr" />
-      </div>
-      <div className="id-box">
-        <div className="title">아이디</div>
-        <div className="title-content">
-          <input
-            className="input-btn"
-            type="text"
-            placeholder="영문 소문자 숫자 조합"
-            value={UserId}
-            onChange={onUserIdHandler}
-          />
-          <button className="btn-check" onClick={onClickIdCheck}>
-            중복확인
-          </button>
+      <h1 className="register-head">회원가입</h1>
+      <div className="box">
+        <div className="id-box">
+          <div className="title">아이디</div>
+          <div className="title-content">
+            <input
+              className="input-btn"
+              type="text"
+              placeholder="영문 소문자 숫자 조합"
+              value={UserId}
+              onChange={onUserIdHandler}
+            />
+            <button className="btn-check" onClick={onClickIdCheck}>
+              중복확인
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="pw-box">
-        <div className="title">비밀번호</div>
-        <div className="title-content">
-          <input
-            className="input-nobtn"
-            type="password"
-            placeholder="영문, 숫자 조합"
-            value={UserPw}
-            onChange={onUserPwHandler}
-          />
+        <div className="pw-box">
+          <div className="title">비밀번호</div>
+          <div className="title-content">
+            <input
+              className="input-nobtn"
+              type="password"
+              placeholder="영문, 숫자 조합"
+              value={UserPw}
+              onChange={onUserPwHandler}
+            />
+          </div>
         </div>
-      </div>
-      <div className="conpw-bow">
-        <div className="title">비밀번호확인</div>
-        <div className="title-content">
-          <input
-            className="input-nobtn"
-            type="password"
-            placeholder="영문, 숫자 조합"
-            value={ConfirmPassword}
-            onChange={onConfirmPasswordHandler}
-          />
+        <div className="conpw-bow">
+          <div className="title">비밀번호확인</div>
+          <div className="title-content">
+            <input
+              className="input-nobtn"
+              type="password"
+              placeholder="영문, 숫자 조합"
+              value={ConfirmPassword}
+              onChange={onConfirmPasswordHandler}
+            />
+          </div>
         </div>
-      </div>
-      <div className="nick-box">
-        <div className="title">닉네임</div>
-        <div className="title-content">
-          <input
-            className="input-btn"
-            type="text"
-            value={NickName}
-            onChange={onNickNameHandler}
-          />
-          <button className="btn-check" onClick={onClickNickCheck}>
-            중복확인
-          </button>
+        <div className="nick-box">
+          <div className="title">닉네임</div>
+          <div className="title-content">
+            <input
+              className="input-btn"
+              type="text"
+              value={NickName}
+              onChange={onNickNameHandler}
+            />
+            <button className="btn-check" onClick={onClickNickCheck}>
+              중복확인
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="email-box">
-        <div className="title">이메일</div>
-        <div className="title-content">
-          <input
-            className="input-nobtn"
-            type="text"
-            name="email"
-            placeholder="sample@gmail.com"
-            value={Email}
-            onChange={onEmailHandler}
-          />
+        <div className="email-box">
+          <div className="title">이메일</div>
+          <div className="title-content">
+            <input
+              className="input-nobtn"
+              type="text"
+              name="email"
+              placeholder="sample@gmail.com"
+              value={Email}
+              onChange={onEmailHandler}
+            />
+          </div>
         </div>
-      </div>
-      <div className="phone-box">
-        <div className="title">휴대폰번호</div>
-        <div className="title-content">
-          <input
-            className="input-nobtn"
-            type="number"
-            placeholder="숫자만 입력 가능"
-            value={PhoneNum}
-            onChange={onPhoneNumHandler}
-          />
+        <div className="phone-box">
+          <div className="title">휴대폰번호</div>
+          <div className="title-content">
+            <input
+              className="input-nobtn"
+              type="number"
+              placeholder="숫자만 입력 가능"
+              value={PhoneNum}
+              onChange={onPhoneNumHandler}
+            />
+          </div>
         </div>
-      </div>
-      <div style={{ padding: "2rem 10rem" }}>
-        <hr />
       </div>
       <div className="btn-next-box">
         <button className="btn-next per-register" onClick={onRegister}>
           회원가입
         </button>
         <button className="btn-next cancel" onClick={onCancel}>
-          취소
+          취 소
         </button>
       </div>
     </div>

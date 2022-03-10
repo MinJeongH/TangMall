@@ -38,11 +38,11 @@ function Login() {
 
   const onClickRegister = () => {
     navigate("/registerAgree", { replace: true });
-  }
+  };
 
   const onClickRegisterCancel = () => {
     navigate(-1);
-  }
+  };
 
   const handleInputId = (e) => {
     setInputId(e.target.value);
@@ -55,47 +55,41 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-container-title">방문을 &nbsp; 환영합니다</div>
-      <div className="login-id-box">
-        <input className="login-input"
-          type="text"
-          name="input_id"
-          placeholder="아이디"
-          value={InputId}
-          onChange={handleInputId}
-        />
-        <div></div>
-      </div>
-      <div className="login-pw-box">
-        <input className="login-input"
-          type="password"
-          name="input_pw"
-          placeholder="비밀번호"
-          value={InputPw}
-          onChange={handleInputPw}
-        />
-        <div></div>
-      </div>
-      <div className="login-btn-box">
-        <button className="login-btn" type="button" onClick={onClickLogin}>
-          로 그 인
-        </button>
-      </div>
-      <div className="hr">
-        <hr />
+      <div className="login">
+        <div className="login-id-box">
+          <input
+            className="login-input"
+            type="text"
+            name="input_id"
+            placeholder="아이디"
+            value={InputId}
+            onChange={handleInputId}
+          />
+        </div>
+        <div className="login-pw-box">
+          <input
+            className="login-input"
+            type="password"
+            name="input_pw"
+            placeholder="비밀번호"
+            value={InputPw}
+            onChange={handleInputPw}
+          />
+        </div>
+        <div className="login-btn-box">
+          <button className="login-btn" type="button" onClick={onClickLogin}>
+            로 그 인
+          </button>
+        </div>
       </div>
       <div className="join-find">
-        <div>
-          <button type="button" 
+        <button
+          type="button"
           className="join-find-button"
-          onClick={onClickRegister}>회원가입</button>
-        </div>
-        <div className="join-or-find">또는</div>
-        <div>
-          <button type="button"
-          className="join-find-button"
-          onClick={onClickRegisterCancel}
-          >취소</button>
-        </div>
+          onClick={onClickRegister}
+        >
+          회원가입
+        </button>
       </div>
     </div>
   );

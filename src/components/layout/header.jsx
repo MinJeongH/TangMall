@@ -32,25 +32,23 @@ const Header = () => {
         </div>
         {auth.user ? (
           <div className="user">
-            <div className="login">
-              <p>{auth.user}</p>
-              <button onClick={logoutHandler}>
-                <img src="logout_icon.svg" alt="login icon" />
-                <p>로그아웃</p>
-              </button>
+            <p>{auth.user}</p>
+            <div className="logout" onClick={logoutHandler}>
+              <img src="logout_icon.svg" alt="login icon" />
+              <p>로그아웃</p>
             </div>
           </div>
         ) : (
           <div className="user">
             <div className="login">
-              <img src="login_icon.svg" alt="login icon" />
               <Link to="/login" className="link">
+                <img src="login_icon.svg" alt="login icon" />
                 로그인
               </Link>
             </div>
             <div className="join">
-              <img src="join_icon.svg" alt="join icon" />
               <Link to="/registerAgree" className="link">
+                <img src="join_icon.svg" alt="join icon" />
                 회원가입
               </Link>
             </div>

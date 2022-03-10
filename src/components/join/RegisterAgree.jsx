@@ -46,15 +46,11 @@ function RegisterAgree() {
 
   return (
     <div className="agree-container">
-      <div className="agree-head-box">
-        <h1 className="sdfjsdk">이용약관 및 개인정보 수집 동의</h1>
-      </div>
+      <h1 className="agree-title">이용약관 및 개인정보 수집 동의</h1>
       <div className="agree-all-box">
         <Checkbox checked={TermsAll} onChange={termsAllHandler} />
         이용약관, 개인정보 수집 및 이용에 모두 동의합니다.
       </div>
-
-      <div className="block"></div>
       <div className="agree-content-box">
         <div className="agree-content-checkbox">
           <Checkbox
@@ -64,14 +60,10 @@ function RegisterAgree() {
           />
           &nbsp;이용약관
         </div>
-
         <div className="agree-content-terms">
           <AgreeText />
         </div>
       </div>
-
-      <div className="block"></div>
-
       <div className="agree-content-box">
         <div className="agree-content-checkbox">
           <Checkbox
@@ -85,11 +77,9 @@ function RegisterAgree() {
           <AgreePerText />
         </div>
       </div>
-
-      <div className="block"></div>
       <div className="agree-btn-box">
         <button className="next-btn agree" type="button" onClick={onClickAgree}>
-          다 음
+          동&nbsp;&nbsp; 의
         </button>
         <button className="next-btn disagree" onClick={onClickDisagree}>
           돌아가기

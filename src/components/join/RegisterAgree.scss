@@ -1,77 +1,64 @@
-/* Agree Container */
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic:wght@400;700;800&display=swap");
+@import "../../common.scss";
 
 .agree-container {
-    border: 1px solid #000;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    padding: 3rem 6rem;
-  }
-  
-  /* Head */
-  
-  .agree-head-box {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding: 3rem 6rem;
+  font-family: "Nanum Gothic", sans-serif;
+  .agree-title {
     width: 100%;
     text-align: center;
+    font-family: "Do Hyeon", sans-serif;
   }
-  
-  /* All check box Area */
-  
   .agree-all-box {
     text-align: left;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
   }
-  
-  .block {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  /* Content */
-  
-  // .agree-content-box {}
-  
   .agree-content-checkbox {
-    background-color: #F0F0F2;
+    background-color: #f0f0f2;
     width: 100%;
     font-family: "Nanum Gothic", sans-serif;
     font-size: 1rem;
-    font-weight: bold;
-    border: 1px solid #000;
+    font-weight: 700;
+    border: 1px solid $fontColorBlack;
   }
-  
   .agree-content-terms {
     width: 100%;
     height: 200px;
-    border: 1px solid #000;
+    border: 1px solid $fontColorBlack;
     font-family: "Nanum Gothic", sans-serif;
     font-size: 1rem;
-    overFlow: scroll;
+    overflow-y: scroll;
+    margin-bottom: 2.2rem;
+    padding: 0;
   }
-  
-  /* Button CSS */
-  
   .agree-btn-box {
     padding-top: 1rem;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-  }
-  
-  .next-btn {
-    font-size: 1.8rem;
-    font-weight: bold;
-    padding: 0.5em 2.5em;
-  
-    &.agree {
-      background-color: #CEF2F2;
-      border-radius: 1rem;
+    .next-btn {
+      font-size: 1.8rem;
+      padding: 0.5em 2.5em;
+      font-family: "Do Hyeon", sans-serif;
+      color: $fontColorBlack;
+      border: none;
+      box-shadow: 0px 4px 6px rgba(24, 39, 75, 0.08),
+        0px 8px 8px rgba(24, 39, 75, 0.04);
+      cursor: pointer;
+      &.agree {
+        background-color: #cef2f2;
+        border-radius: 1rem;
+      }
+      &.disagree {
+        background-color: #f0f0f2;
+        border-radius: 1rem;
+      }
     }
-  
-    &.disagree {
-      background-color: #F0F0F2;
-      border-radius: 1rem;
-    }
   }
+}
