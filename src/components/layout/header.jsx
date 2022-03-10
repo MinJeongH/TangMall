@@ -72,11 +72,21 @@ const Header = () => {
               경매참여
             </h1>
             <div className={`parti ${view === 0 ? "view" : ""}`}>
-              <p>주방</p>
-              <p>가전</p>
-              <p>스포츠,레저</p>
-              <p>의류</p>
-              <p className="menu_mini">기타잡화</p>
+              <Link to={"/auction/주방물품"}>
+                <p>주방</p>
+              </Link>
+              <Link to={"/auction/가전제품"}>
+                <p>가전</p>
+              </Link>
+              <Link to={"/auction/스포츠,레저"}>
+                <p>스포츠,레저</p>
+              </Link>
+              <Link to={"/auction/의류"}>
+                <p>의류</p>
+              </Link>
+              <Link to={"/auction/기타잡화"}>
+                <p className="menu_mini">기타잡화</p>
+              </Link>
             </div>
           </div>
           <div
