@@ -3,14 +3,12 @@ import { useParams } from "react-router-dom";
 import Card from "../layout/card";
 import InfoList from "./info_list";
 import "./auction_info.scss";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { itemSortListState } from "../../common/recoil/auction_sort";
 
 const AuctionInfo = () => {
-  const [viewsort, setViewsort] = useState(false);
+  const [sortName, setSortName] = useRecoilState(itemSortListState);
   const { menu } = useParams();
-
-  const clickView = () => {
-    setViewsort((prev) => !prev);
-  };
 
   return (
     <section className="info_container">
@@ -23,34 +21,19 @@ const AuctionInfo = () => {
             alt="search icon"
             className="search_icon"
           />
-          <div className="sort">
-            <div className="sort_main">
-              <p>최신순</p>
-              {viewsort ? (
-                <img
-                  src="/arrow_up_icon.svg"
-                  alt="sort_icon_u"
-                  className="sort_icon"
-                  onClick={clickView}
-                />
-              ) : (
-                <img
-                  src="/arrow_down_icon.svg"
-                  alt="sort_icon_d"
-                  className="sort_icon"
-                  onClick={clickView}
-                />
-              )}
-            </div>
-            {viewsort && (
-              <div className="sort_menu">
-                <p className="sort_text">최신순</p>
-                <p className="sort_text">인기순</p>
-                <p className="sort_text">낮은가격순</p>
-                <p className="sort_text">높은가격순</p>
-              </div>
-            )}
-          </div>
+          <select
+            name="sort"
+            id="item_sort"
+            value={sortName}
+            onChange={(e) => {
+              setSortName(e.target.value);
+            }}
+          >
+            <option value="최신순">최신순</option>
+            <option value="인기순">인기순</option>
+            <option value="낮은가격순">낮은가격순</option>
+            <option value="높은가격순">높은가격순</option>
+          </select>
         </div>
       </div>
       <Card>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "../auth/AuthProvider";
+import { useAuth } from "../../common/auth/AuthProvider";
 import "./AuthLayout.scss";
 
 function AuthLayout({ children }) {

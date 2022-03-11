@@ -2,7 +2,7 @@ import React from "react";
 import "./App.scss";
 import Header from "./components/layout/header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./components/auth/AuthProvider";
+import { AuthProvider } from "./common/auth/AuthProvider";
 import ItemDetail from "./components/detail/item_detail";
 import Register from "./components/join/Register";
 import RegisterAgree from "./components/join/RegisterAgree";
@@ -14,6 +14,13 @@ import Ads from "./components/layout/ads";
 import AuctionInfo from "./components/auction_info/auction_info";
 import AuthLayout from "./components/layout/AuthLayout";
 import Sample from "./components/sample";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
 
 const routes = [
   {
@@ -84,21 +91,23 @@ const routes = [
 function App() {
   return (
     <div className="app">
-      <BrowserRouter>
-        <AuthProvider>
-          <Header />
-          <Routes>
-            {routes.map((route, key) => (
-              <Route
-                key={key}
-                path={route.path}
-                element={route.component}
-              ></Route>
-            ))}
-          </Routes>
-        </AuthProvider>
-      </BrowserRouter>
-      <Info />
+      <RecoilRoot>
+        <BrowserRouter>
+          <AuthProvider>
+            <Header />
+            <Routes>
+              {routes.map((route, key) => (
+                <Route
+                  key={key}
+                  path={route.path}
+                  element={route.component}
+                ></Route>
+              ))}
+            </Routes>
+          </AuthProvider>
+        </BrowserRouter>
+        <Info />
+      </RecoilRoot>
     </div>
   );
 }

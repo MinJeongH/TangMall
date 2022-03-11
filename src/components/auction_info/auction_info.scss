@@ -36,44 +36,11 @@
         margin-right: 2.5rem;
         cursor: pointer;
       }
-      .sort_main {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        background-color: $colorWhite;
-        border: 1px solid $fontColorBlack;
-        p {
-          margin: 0.3rem 0.5rem;
-          font-weight: 700;
-          font-size: 1rem;
-          cursor: default;
-        }
-        .sort_icon {
-          margin: 0.3rem 0.5rem;
-          width: 1rem;
-          cursor: pointer;
-        }
-      }
-      .sort_menu {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: $colorWhite;
-        width: 5.8rem;
-        border: 1px solid $fontColorBlack;
-        .sort_text {
-          display: flex;
-          justify-content: center;
-          margin: 0;
-          padding: 0.8rem 0;
-          width: 100%;
-          height: 100%;
-          cursor: pointer;
-          &:hover {
-            background-color: $colorMint;
-          }
-        }
+      select {
+        font-family: "Nanum Gothic", sans-serif;
+        font-size: 1rem;
+        color: $fontColorBlack;
+        padding: 0.25rem 0.4rem;
       }
     }
   }
